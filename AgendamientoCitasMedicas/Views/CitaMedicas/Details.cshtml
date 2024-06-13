@@ -1,0 +1,48 @@
+﻿@model AgendamientoCitasMedicas.Models.CitaMedica
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CitaMedica</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Availability)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Availability)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Schedule)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Schedule)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Paciente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Paciente.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Medico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Medico.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

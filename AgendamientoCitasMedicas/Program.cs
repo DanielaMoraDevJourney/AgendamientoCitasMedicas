@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using AgendamientoCitasMedicas.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AgendamientoCitasMedicasContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AgendamientoCitasMedicasContext") ?? throw new InvalidOperationException("Connection string 'AgendamientoCitasMedicasContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
