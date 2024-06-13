@@ -22,5 +22,7 @@ namespace AgendamientoCitasMedicas.Models
 
         public int MedicoId { get; set; }
         public Medico? Medico { get; set; }
+
+        public List<Reporte>? Reportes { get; set; }
     }
 }
