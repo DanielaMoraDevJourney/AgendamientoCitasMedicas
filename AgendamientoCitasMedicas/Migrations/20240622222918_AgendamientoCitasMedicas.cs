@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AgendamientoCitasMedicas.Migrations
 {
     /// <inheritdoc />
-    public partial class agendamiento : Migration
+    public partial class AgendamientoCitasMedicas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

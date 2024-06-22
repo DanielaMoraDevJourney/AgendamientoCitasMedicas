@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgendamientoCitasMedicas.Migrations
 {
     [DbContext(typeof(AgendamientoCitasMedicasContext))]
-    [Migration("20240613023329_agendamiento")]
-    partial class agendamiento
+    [Migration("20240622222918_AgendamientoCitasMedicas")]
+    partial class AgendamientoCitasMedicas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
