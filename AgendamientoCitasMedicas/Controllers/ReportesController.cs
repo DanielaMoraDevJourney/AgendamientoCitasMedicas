@@ -48,7 +48,7 @@ namespace AgendamientoCitasMedicas.Controllers
         // GET: Reportes/Create
         public IActionResult Create()
         {
-            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Contraindication");
+            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Description");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Contraindication", reporte.TratamientoId);
+            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Description", reporte.TratamientoId);
             return View(reporte);
         }
 
@@ -82,7 +82,7 @@ namespace AgendamientoCitasMedicas.Controllers
             {
                 return NotFound();
             }
-            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Contraindication", reporte.TratamientoId);
+            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Description", reporte.TratamientoId);
             return View(reporte);
         }
 
@@ -118,7 +118,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Contraindication", reporte.TratamientoId);
+            ViewData["TratamientoId"] = new SelectList(_context.Set<Tratamiento>(), "Id", "Description", reporte.TratamientoId);
             return View(reporte);
         }
 

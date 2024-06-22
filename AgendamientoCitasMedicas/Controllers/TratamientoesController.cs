@@ -50,7 +50,7 @@ namespace AgendamientoCitasMedicas.Controllers
         public IActionResult Create()
         {
             ViewData["MedicoId"] = new SelectList(_context.Medico, "Id", "Name");
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Address");
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Name");
             return View();
         }
 
@@ -68,7 +68,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["MedicoId"] = new SelectList(_context.Medico, "Id", "Name", tratamiento.MedicoId);
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Address", tratamiento.PacienteId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Name", tratamiento.PacienteId);
             return View(tratamiento);
         }
 
@@ -86,7 +86,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 return NotFound();
             }
             ViewData["MedicoId"] = new SelectList(_context.Medico, "Id", "Name", tratamiento.MedicoId);
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Address", tratamiento.PacienteId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Name", tratamiento.PacienteId);
             return View(tratamiento);
         }
 
@@ -123,7 +123,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["MedicoId"] = new SelectList(_context.Medico, "Id", "Name", tratamiento.MedicoId);
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Address", tratamiento.PacienteId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "Id", "Name", tratamiento.PacienteId);
             return View(tratamiento);
         }
 

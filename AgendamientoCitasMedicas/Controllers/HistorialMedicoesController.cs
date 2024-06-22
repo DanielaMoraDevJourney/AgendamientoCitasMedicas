@@ -48,7 +48,7 @@ namespace AgendamientoCitasMedicas.Controllers
         // GET: HistorialMedicoes/Create
         public IActionResult Create()
         {
-            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Address");
+            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Address", historialMedico.PacienteId);
+            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Name", historialMedico.PacienteId);
             return View(historialMedico);
         }
 
@@ -82,7 +82,7 @@ namespace AgendamientoCitasMedicas.Controllers
             {
                 return NotFound();
             }
-            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Address", historialMedico.PacienteId);
+            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Name", historialMedico.PacienteId);
             return View(historialMedico);
         }
 
@@ -118,7 +118,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Address", historialMedico.PacienteId);
+            ViewData["PacienteId"] = new SelectList(_context.Set<Paciente>(), "Id", "Name", historialMedico.PacienteId);
             return View(historialMedico);
         }
 

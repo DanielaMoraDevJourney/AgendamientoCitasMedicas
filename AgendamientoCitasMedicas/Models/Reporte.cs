@@ -11,6 +11,6 @@ namespace AgendamientoCitasMedicas.Models
         public string? DatosEstadisticos { get; set; }
 
         public int TratamientoId { get; set; }
-        public virtual Tratamiento Tratamiento { get; set; }
+        public Tratamiento? Tratamiento { get; set; }
     }
 }

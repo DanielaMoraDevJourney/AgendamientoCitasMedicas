@@ -46,6 +46,7 @@ namespace AgendamientoCitasMedicas.Controllers
         // GET: Pacientes/Create
         public IActionResult Create()
         {
+            ViewBag.Genre = Enum.GetValues(typeof(TipoGenero)).Cast<TipoGenero>().Select(e => new { Id = (int)e, Name = e.ToString() }).ToList();
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Genre = Enum.GetValues(typeof(TipoGenero)).Cast<TipoGenero>().Select(e => new { Id = (int)e, Name = e.ToString() }).ToList();
             return View(paciente);
         }
 
@@ -78,6 +80,7 @@ namespace AgendamientoCitasMedicas.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Genre = Enum.GetValues(typeof(TipoGenero)).Cast<TipoGenero>().Select(e => new { Id = (int)e, Name = e.ToString() }).ToList();
             return View(paciente);
         }
 
@@ -113,6 +116,7 @@ namespace AgendamientoCitasMedicas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Genre = Enum.GetValues(typeof(TipoGenero)).Cast<TipoGenero>().Select(e => new { Id = (int)e, Name = e.ToString() }).ToList();
             return View(paciente);
         }
 
